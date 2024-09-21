@@ -44,7 +44,7 @@ nav ul li a.active {
 
 /* Main css */
 main {
-    padding: 20px;
+    padding: 10px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -135,5 +135,39 @@ footer {
     width: 350px; 
     height: 350px;
     object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+.affiliation {
+    width: 350px; 
+    height: 350px;
+    object-fit: cover;
     border-radius: 50%; 
 }
+
+
+.certificate-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cert-image {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.cert-image:hover {
+    transform: scale(1.05);
+}
+
