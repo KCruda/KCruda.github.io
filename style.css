@@ -104,13 +104,13 @@ footer {
 .project-images {
     display: flex;
     flex-wrap: wrap;
-    gap: 130px;
+    gap: 50px;
     justify-content: center;
 }
 
 .project-images img {
-    max-width: 200%;
-    height: auto;
+    max-width: 350px;
+    height: 350px;
 }
 
 
