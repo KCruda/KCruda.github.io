@@ -92,15 +92,6 @@ img {
     height: 200px; /* Set a fixed height for uniformity */
 }
 
-/* Footer css */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #000;
-    color: #fff;
-    position: relative; /* Changed to relative to avoid overlap */
-    width: 100%;
-}
 
 /* Responsive css */
 @media (max-width: 768px) {
@@ -146,7 +137,7 @@ footer {
 }
 
 .profile-pic, .affiliation, .cert-image {
-    width: 80%; /* Use percentage for responsive width */
+    width: 90%; /* Use percentage for responsive width */
     max-width: 350px; /* Limit max size */
     object-fit: cover;
     border-radius: 50%;
@@ -213,22 +204,7 @@ footer {
     margin-bottom: 20px; /* Space between paragraphs */
 }
 
-/* Footer CSS */
-footer {
-    text-align: center;
-    padding: 1px;
-    background-color: #000;
-    color: #fff;
-    position: fixed; /* Set to fixed */
-    left: 0; /* Align to left */
-    bottom: 0; /* Stick to bottom */
-    width: 100%; /* Full width */
-    z-index: 1000; /* Ensure it stays above other content */
-}
 
-/* Add padding to the main content to prevent overlap with footer */
-main {
-    padding-bottom: 80px; /* Adjust based on footer height */
-}
+
 
 
