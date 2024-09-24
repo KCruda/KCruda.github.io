@@ -1,7 +1,6 @@
 /* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f5f5f5;
@@ -12,7 +11,7 @@ body {
 
 header {
     background-color: #000;
-    padding: 15px;
+    padding: 10px; /* Reduced padding */
 }
 
 nav ul {
@@ -23,6 +22,7 @@ nav ul {
     justify-content: center;
 }
 
+/* Responsive navigation */
 nav ul li {
     margin: 0 15px;
 }
@@ -31,22 +31,37 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background-color: #444; /* Add background on hover */
+    text-decoration: none;
 }
 
 nav ul li a.active {
-    color: #fff;
-    text-decoration: underline;
+    background-color: #555; /* Different color for the active page */
+    text-decoration: none;
 }
 
 /* Main css */
 main {
-    padding: 10px;
+    padding: 20px; /* More padding for mobile */
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.main-container {
+    display: flex; /* Enable flexbox layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between text and image */
+}
+
+.text-content {
+    max-width: 60%; /* Limit width of text for better readability */
+    margin-right: 20px; /* Space between text and image */
 }
 
 main h1 {
@@ -65,10 +80,16 @@ main p {
     margin-bottom: 20px;
 }
 
+/* Image Styles */
 img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
+    display: block; /* Center the image */
+    margin: 20px auto; /* Center with equal margins */
+    max-width: 80%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make the image a circle */
+    object-fit: cover; /* Ensures the image covers the entire area */
+    width: 200px; /* Set a fixed width for uniformity */
+    height: 200px; /* Set a fixed height for uniformity */
 }
 
 /* Footer css */
@@ -77,131 +98,137 @@ footer {
     padding: 20px;
     background-color: #000;
     color: #fff;
-    position: absolute;
+    position: relative; /* Changed to relative to avoid overlap */
     width: 100%;
-    bottom: 0;
 }
 
 /* Responsive css */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column;
+        flex-direction: column; /* Stack items on small screens */
+        align-items: center; /* Center items */
     }
 
     main h1 {
-        font-size: 2rem;
+        font-size: 2rem; /* Adjust title font size */
     }
 
     main h2 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Adjust subtitle font size */
     }
 
     main p {
-        font-size: 1rem;
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+
+    .main-container {
+        flex-direction: column; /* Stack text and image on small screens */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center text */
+    }
+
+    .text-content {
+        max-width: 100%; /* Full width for small screens */
+        margin-right: 0; /* No margin on small screens */
     }
 }
 
 .project-images {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 20px; /* Reduced gap */
     justify-content: center;
 }
 
 .project-images img {
-    max-width: 350px;
-    height: 350px;
+    width: 250px; /* Use percentage for responsive width */
+    max-width: 350px; /* Limit max size */
 }
 
-
-
-.index-images{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 150px;
-    justify-self: end;
-}
-
-
-.container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 0vh;
-    padding-right: 300px; 
-}
-
-.profile-pic {
-    width: 350px; 
-    height: 350px;
+.profile-pic, .affiliation, .cert-image {
+    width: 80%; /* Use percentage for responsive width */
+    max-width: 350px; /* Limit max size */
     object-fit: cover;
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
-.profile-pic:hover {
+
+.profile-pic:hover, .cert-image:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds depth on hover */
 }
 
-.affiliation {
-    width: 350px; 
-    height: 350px;
-    object-fit: cover;
-    border-radius: 50%; 
-}
-
-
+/* Certificate gallery adjustments */
 .certificate-gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 20px; /* Reduced gap */
     justify-content: center;
-    margin-top: 20px;
 }
 
-.cert-image {
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+/* Add padding for smaller screens */
+@media (max-width: 400px) {
+    main {
+        padding: 10px; /* Less padding on very small screens */
+    }
+
+    main h1 {
+        font-size: 1.75rem; /* Smaller title font */
+    }
+
+    main h2 {
+        font-size: 1.25rem; /* Smaller subtitle font */
+    }
 }
 
-.cert-image:hover {
-    transform: scale(1.05);
-}
-
-/* Navigation styling */
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.profile-container {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap if necessary */
+    align-items: flex-start; /* Align items at the start of the flex container */
+    margin-top: 40px; /* Space above the section */
+    gap: 20px; /* Gap between the image and text */
+}
+    
+.container {
+    flex: 0 0 auto; /* Prevent container from stretching */
 }
 
-nav ul li {
-    margin: 0 15px;
+.about-me {
+    flex: 1; /* Allow the About Me section to take up remaining space */
+    padding: 10px;
+    background-color: #fff; /* White background for contrast */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-nav ul li a {
+.about-me h2 {
+    font-size: 2rem; /* Size for the section title */
+    color: #000; /* Title color */
+}
+
+.about-me p {
+    font-size: 1.1rem; /* Paragraph font size */
+    line-height: 1.6; /* Improved line height */
+    margin-bottom: 20px; /* Space between paragraphs */
+}
+
+/* Footer CSS */
+footer {
+    text-align: center;
+    padding: 1px;
+    background-color: #000;
     color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Space between icon and text */
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    position: fixed; /* Set to fixed */
+    left: 0; /* Align to left */
+    bottom: 0; /* Stick to bottom */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays above other content */
 }
 
-nav ul li a:hover {
-    background-color: #444; /* Add background on hover */
-    text-decoration: none;
+/* Add padding to the main content to prevent overlap with footer */
+main {
+    padding-bottom: 80px; /* Adjust based on footer height */
 }
 
-nav ul li a.active {
-    background-color: #555; /* Different color for the active page */
-    text-decoration: none;
-}
+
